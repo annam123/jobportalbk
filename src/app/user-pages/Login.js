@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Form,Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 

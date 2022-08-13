@@ -10,7 +10,7 @@ import { withTranslation } from "react-i18next";
 import Login from './user-pages/Login';
 
 class App extends Component {
-
+  
   state = {}
   componentDidMount() {
     this.onRouteChanged();
@@ -37,6 +37,11 @@ class App extends Component {
         </div>
       </div>
     );
+    const token = localStorage.getItem('accessToken');
+
+  if(!token) {
+    return <Login />
+  }
   }
 
   componentDidUpdate(prevProps) {
@@ -49,11 +54,6 @@ class App extends Component {
     console.log("ROUTE CHANGED");
     const { i18n } = this.props;
     const body = document.querySelector('body');
-    const token = localStorage.getItem('accessToken');
-
-    if(!token) {
-      return <Login />
-    }
     
     if(this.props.location.pathname === '/layout/RtlLayout') {
       body.classList.add('rtl');
