@@ -7,18 +7,22 @@ import Sidebar from './shared/Sidebar';
 import SettingsPanel from './shared/SettingsPanel';
 import Footer from './shared/Footer';
 import { withTranslation } from "react-i18next";
+import Login from './user-pages/Login';
 
 class App extends Component {
+
   state = {}
   componentDidMount() {
     this.onRouteChanged();
   }
   render () {
+  //  let Login = !this.state.isLogin ? <Login/> : '';
     let navbarComponent = !this.state.isFullPageLayout ? <Navbar/> : '';
     let sidebarComponent = !this.state.isFullPageLayout ? <Sidebar/> : '';
     let SettingsPanelComponent = !this.state.isFullPageLayout ? <SettingsPanel/> : '';
     let footerComponent = !this.state.isFullPageLayout ? <Footer/> : '';
-    return (
+    
+      return (
       <div className="container-scroller">
         { navbarComponent }
         <div className="container-fluid page-body-wrapper">
@@ -45,6 +49,12 @@ class App extends Component {
     console.log("ROUTE CHANGED");
     const { i18n } = this.props;
     const body = document.querySelector('body');
+    const token = localStorage.getItem('accessToken');
+
+    if(!token) {
+      return <Login />
+    }
+    
     if(this.props.location.pathname === '/layout/RtlLayout') {
       body.classList.add('rtl');
       i18n.changeLanguage('ar');
