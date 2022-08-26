@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import { ProgressBar } from 'react-bootstrap';
-// import '../../assets/styles/style.css';
+import { Link } from 'react-router-dom';
+import TableData from '../TableData.json';
+import ProgressBar from 'react-bootstrap/ProgressBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../../assets/styles/style.css";
 
 export class RecurProfileDetails extends Component {
   render() {
@@ -19,7 +22,9 @@ export class RecurProfileDetails extends Component {
           <div className="col-lg-12 grid-margin stretch-card">
             <div className="card">
               <div className="card-body">
-                <h4 className="card-title">Profile Details</h4>
+                <h4 className="card-title">Profile Details
+                <Link className='btn btn-success btn-sm float-right' to="/recuritement/basic-elements">Add Profile</Link>
+                </h4>
                 <div className="table-responsive">
                   <table className="table table-striped">
                     <thead>
@@ -33,153 +38,45 @@ export class RecurProfileDetails extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face1.jpg")} alt="user icon" />
-                        </td>
-                        <td> Herman Beck </td>
-                        <td>
-                          <ProgressBar variant="success" now={25} />
-                        </td>
-                        <td> May 15, 2015 </td>
-                        <td><label className="badge badge-info">Fixed</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face2.jpg")} alt="user icon" />
-                        </td>
-                        <td> Messsy Adam </td>
-                        <td>
-                          <ProgressBar variant="danger" now={75} />
-                        </td>
-                        <td> July 1, 2015 </td>
-                        <td><label className="badge badge-warning">In Process</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face3.jpg")} alt="user icon" />
-                        </td>
-                        <td> John Richards </td>
-                        <td>
-                          <ProgressBar variant="warning" now={90} />
-                        </td>
-                        <td> Apr 12, 2015 </td>
-                        <td><label className="badge badge-success">Completed</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face4.jpg")} alt="user icon" />
-                        </td>
-                        <td> Peter Meggik </td>
-                        <td>
-                          <ProgressBar variant="primary" now={50} />
-                        </td>
-                        <td> May 15, 2015 </td>
-                        <td><label className="badge badge-success">Completed</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face5.jpg")} alt="user icon" />
-                        </td>
-                        <td> Edward </td>
-                        <td>
-                          <ProgressBar variant="danger" now={60} />
-                        </td>
-                        <td> May 03, 2015 </td>
-                        <td><label className="badge badge-warning">In Process</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face6.jpg")} alt="user icon" />
-                        </td>
-                        <td> John Doe </td>
-                        <td>
-                          <ProgressBar variant="info" now={65} />
-                        </td>
-                        <td> April 05, 2015 </td>
-                        <td><label className="badge badge-success">Completed</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
-                      <tr>
-                        <td className="py-1">
-                          <img src={require("../../assets/images/faces/face7.jpg")} alt="user icon" />
-                        </td>
-                        <td> Henry Tom </td>
-                        <td>
-                          <ProgressBar variant="warning" now={20} />
-                        </td>
-                        <td> June 16, 2015 </td>
-                        <td><label className="badge badge-info">Fixed</label></td>
-                        <td>
-                          <button type="button" className="btn btn-gradient-dark btn-icon-text">
-                        Edit
-                        <i className="mdi mdi-file-check btn-icon-append"></i>                          
-                      </button>
-                      <button type="button" className="btn btn-gradient-danger btn-icon-text">
-                        <i className="mdi mdi-delete btn-icon-trash"></i>                                                    
-                        Delete
-                      </button>
-                      </td>
-                      </tr>
+                      {TableData.map((data, i) => {
+                        this.skillVariant = '0';
+                        if (data.skillCapacity > 0 && data.skillCapacity < 36) {
+                          this.skillVariant = "danger"
+                        } else if (data.skillCapacity > 37 && data.skillCapacity < 76) {
+                          this.skillVariant = "warning"
+                        } else { this.skillVariant = "success" }
+
+                        this.profileStatus = '0';
+                        if (data.status.toLowerCase() === 'rejected') {
+                          this.profileStatus = "badge badge-danger"
+                        } else if (data.status.toLowerCase() === 'inprogress') {
+                          this.profileStatus = "badge badge-warning"
+                        } else { this.profileStatus = "badge badge-success" }
+
+                        return (
+
+                          <tr key={i}>
+                            <td className="py-1">
+                              <img src={data.path} alt="user icon" />
+                            </td>
+                            <td> {data.fullName}</td>
+                            <td> <ProgressBar striped variant={this.skillVariant} now={data.skillCapacity} /> </td>
+                            <td> {data.lastUpdatedDate} </td>
+                            <td> <label class={this.profileStatus}>{data.status}</label> </td>
+                            <td>          <button type="button" className="btn btn-gradient-dark btn-icon-text">
+                              Edit
+                              <i className="mdi mdi-file-check btn-icon-append"></i>
+                            </button>
+                              <button type="button" className="btn btn-gradient-danger btn-icon-text">
+                                <i className="mdi mdi-delete btn-icon-trash"></i>
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+                        )
+
+                      })
+                      }
                     </tbody>
                   </table>
                 </div>
